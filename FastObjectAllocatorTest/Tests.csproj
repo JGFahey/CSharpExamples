@@ -48,16 +48,22 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PerformanceTest.cs" />
+    <Compile Include="FastObjectAllocator.cs" />
+    <Compile Include="Memoization.cs" />
+    <Compile Include="TestTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FastObjectAllocator\FastObjectAllocator.csproj">
+    <ProjectReference Include="..\FastObjectAllocator\ObjectAllocation.csproj">
       <Project>{6DD79E88-7AEE-44B9-8B3E-D16BF0946226}</Project>
-      <Name>FastObjectAllocator</Name>
+      <Name>ObjectAllocation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Recursion\Recursion.csproj">
+      <Project>{720642f0-ff94-4990-8080-67efb17687f3}</Project>
+      <Name>Recursion</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
