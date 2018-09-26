@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ObjectCreation;
 
-namespace FastObjectAllocatorTest
+namespace UnitTests
 {
     [TestClass]
     public class FastObjectAllocator

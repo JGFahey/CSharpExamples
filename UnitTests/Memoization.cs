@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Optimizations;
 
-namespace FastObjectAllocatorTest
+namespace UnitTests
 {
     [TestClass]
     public class Memoization
@@ -41,19 +41,19 @@ namespace FastObjectAllocatorTest
             return (--a);
         }
 
-        private long MemoizedFibonacci(int n) => Utilities.Memoize<int, long>(Fibonacci)(n);
-        private long MemoizedPrimeNumber(int n) => Utilities.Memoize<int, long>(PrimeNumber)(n);
-
         [TestMethod]
         public void TestRecursionOptimization()
         {
-            int sets = 5;
-            int repititions = 50000;
+            var MemoizedFibonacci = Utilities.Memoize<int, long>(Fibonacci);
+            var MemoizedPrimeNumber = Utilities.Memoize<int, long>(PrimeNumber);
 
-            TestTools.Measure("Fibonacci Sequence", sets, repititions, () => { Fibonacci(15); });
-            TestTools.Measure("Memoized Fibonacci Sequence", sets, repititions, () => { MemoizedFibonacci(15); });
-            TestTools.Measure("Prime Number", sets, repititions, () => { PrimeNumber(45); });
-            TestTools.Measure("Memoized Prime Number", sets, repititions, () => { MemoizedPrimeNumber(45); });
+            int sets = 5;
+            int repititions = 10000;
+
+            TestTools.Measure("Fibonacci Sequence", sets, repititions, () => { Fibonacci(20); });
+            TestTools.Measure("Memoized Fibonacci Sequence", sets, repititions, () => { MemoizedFibonacci(20); });
+            TestTools.Measure("Prime Number", sets, repititions, () => { PrimeNumber(50); });
+            TestTools.Measure("Memoized Prime Number", sets, repititions, () => { MemoizedPrimeNumber(50); });
         }
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectAllocation", "FastObjectAllocator\ObjectAllocation.csproj", "{6DD79E88-7AEE-44B9-8B3E-D16BF0946226}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "FastObjectAllocatorTest\Tests.csproj", "{6DE3E3CA-07C2-4ABA-925D-944872C21109}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "UnitTests\Tests.csproj", "{6DE3E3CA-07C2-4ABA-925D-944872C21109}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursion", "Recursion\Recursion.csproj", "{720642F0-FF94-4990-8080-67EFB17687F3}"
 EndProject

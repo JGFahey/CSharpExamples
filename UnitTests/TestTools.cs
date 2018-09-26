@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 
-namespace FastObjectAllocatorTest
+namespace UnitTests
 {
     public static class TestTools
     {
@@ -11,11 +11,11 @@ namespace FastObjectAllocatorTest
         /// in order to calculate basic statistics on its performance
         /// </summary>
         /// <param name="message">A custom output message for the job</param>
-        /// <param name="sets">The outer number of loops to perform (Each set is aggregated separately from each other)</param>
-        /// <param name="repititions">The number of times to perform the action within a set</param>
+        /// <param name="measurements">The outer number of loops to perform</param>
+        /// <param name="repititions">The number of times to perform the action within a measurement</param>
         /// <param name="action">The function to run</param>
         /// <returns>Returns an array of measurements (double)</returns>
-        public static double[] Measure(string message, int sets, int repititions, Action action)
+        public static double[] Measure(string message, int measurements, int repititions, Action action)
         {
             // clean-up
             GC.Collect();
@@ -25,8 +25,8 @@ namespace FastObjectAllocatorTest
             // warm-up
             action();
 
-            double[] results = new double[sets];
-            for (int i = 0; i < sets; i++)
+            double[] results = new double[measurements];
+            for (int i = 0; i < measurements; i++)
             {
                 Stopwatch timer = Stopwatch.StartNew();
 
